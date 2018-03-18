@@ -1,13 +1,7 @@
 package dbcheck.model.dao;
 
-import com.ibatis.common.resources.Resources;
-import com.ibatis.sqlmap.client.SqlMapClient;
-import com.ibatis.sqlmap.client.SqlMapClientBuilder;
 import dbcheck.model.domain.TestcaseBean;
 import org.springframework.orm.ibatis.support.SqlMapClientDaoSupport;
-import org.springframework.dao.DataAccessException;
-
-
 
 import java.io.IOException;
 import java.sql.SQLException;

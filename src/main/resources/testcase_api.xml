@@ -16,9 +16,17 @@
         <parameter property="testcaseBody" jdbcType="ORACLECURSOR" javaType="java.sql.ResultSet" mode="OUT" resultMap="testcase-map"/>
     </parameterMap>
 
-
     <procedure id="getTestcase" parameterMap="getTestcaseMap">
         { call DBTEST.PKG_CORE.get_testcase(?, ?)}
     </procedure>
+
+
+    <resultMap id="testcaseActualResult" class="dbcheck.model.domain.TestcaseBean">
+        <result property="actualResult" column="testcase_result" jdbcType="VARCHAR" javaType="string"/>
+    </resultMap>
+
+    <select id="getTestcaseActualResult" parameterClass="map" resultMap="testcaseActualResult">
+        <![CDATA[SELECT dbms_xmlgen.getXML(#testcaseQuery#) testcase_result FROM dual]]>
+    </select>
 
 </sqlMap>

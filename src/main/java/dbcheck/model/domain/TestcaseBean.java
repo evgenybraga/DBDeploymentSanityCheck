@@ -17,9 +17,9 @@ public class TestcaseBean implements Serializable {
     private String query;
     private Boolean enabled;
     private ETestcaseStatus status;
-    private Document expectedResult;
-    private Document actualResult;
-    private Document comparisonResult;
+    private String expectedResult;
+    private String actualResult;
+    private String comparisonResult;
 
     public TestcaseBean() {
     }
@@ -64,20 +64,20 @@ public class TestcaseBean implements Serializable {
         this.status = status;
     }
 
-    public Document getExpectedResult() {
-        return expectedResult;
-    }
+//    public String getExpectedResult() {
+//        return expectedResult;
+//    }
+//
+//    public void setExpectedResult(String expectedResult) throws Exception {
+//        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+//        DocumentBuilder builder = null;
+//        builder = factory.newDocumentBuilder();
+//
+//        Document doc = builder.parse(new ByteArrayInputStream(expectedResult.getBytes(StandardCharsets.UTF_8)));
+//        this.expectedResult = doc;
+//    }
 
-    public void setExpectedResult(String expectedResult) throws Exception {
-        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-        DocumentBuilder builder = null;
-        builder = factory.newDocumentBuilder();
 
-        Document doc = builder.parse(new ByteArrayInputStream(expectedResult.getBytes(StandardCharsets.UTF_8)));
-        this.expectedResult = doc;
-    }
-
-/*
     public String getExpectedResult() {
         return expectedResult;
     }
@@ -85,20 +85,20 @@ public class TestcaseBean implements Serializable {
     public void setExpectedResult(String expectedResult) {
         this.expectedResult = expectedResult;
     }
-*/
-    public Document getActualResult() {
+
+    public String getActualResult() {
         return actualResult;
     }
 
-    public void setActualResult(Document actualResult) {
+    public void setActualResult(String actualResult) {
         this.actualResult = actualResult;
     }
 
-    public Document getComparisonResult() {
+    public String getComparisonResult() {
         return comparisonResult;
     }
 
-    public void setComparisonResult(Document comparisonResult) {
+    public void setComparisonResult(String comparisonResult) {
         this.comparisonResult = comparisonResult;
     }
 }

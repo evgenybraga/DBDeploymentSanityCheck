@@ -7,6 +7,8 @@ import java.sql.SQLException;
 import java.util.List;
 
 public interface ITestcaseService {
+
     public List<TestcaseBean> getTestcase(String code) throws IOException, SQLException;
+    public List<TestcaseBean> getTestcaseActualResult(String query) throws IOException, SQLException;
 
 }

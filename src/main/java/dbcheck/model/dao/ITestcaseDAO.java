@@ -13,7 +13,6 @@ public interface ITestcaseDAO {
      * @return
      */
     public List<TestcaseBean> getTestcase(String code) throws IOException, SQLException;
-
-
+    public List<TestcaseBean> getTestcaseActualResult(String query) throws IOException, SQLException;
 
 }

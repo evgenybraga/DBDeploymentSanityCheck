@@ -9,15 +9,33 @@ import java.util.List;
 
 
 public class TestcaseService implements ITestcaseService {
-    private ITestcaseDAO testcaseDao = null;
 
-    public void setTestcaseDao(ITestcaseDAO testcaseDao) {
-        this.testcaseDao = testcaseDao;
-    }
+    private ITestcaseDAO testcaseSourceDao;
+    private ITestcaseDAO testcaseTargetDao;
 
     @Override
     public List<TestcaseBean> getTestcase(String code) throws IOException, SQLException {
-        System.out.println("123");
-        return  testcaseDao.getTestcase(code);
+        return  testcaseSourceDao.getTestcase(code);
+    }
+
+    @Override
+    public List<TestcaseBean> getTestcaseActualResult(String query) throws IOException, SQLException {
+        return  testcaseTargetDao.getTestcaseActualResult(query);
+    }
+
+    public ITestcaseDAO getTestcaseSourceDao() {
+        return testcaseSourceDao;
+    }
+
+    public void setTestcaseSourceDao(ITestcaseDAO testcaseSourceDao) {
+        this.testcaseSourceDao = testcaseSourceDao;
+    }
+
+    public ITestcaseDAO getTestcaseTargetDao() {
+        return testcaseTargetDao;
+    }
+
+    public void setTestcaseTargetDao(ITestcaseDAO testcaseTargetDao) {
+        this.testcaseTargetDao = testcaseTargetDao;
     }
 }

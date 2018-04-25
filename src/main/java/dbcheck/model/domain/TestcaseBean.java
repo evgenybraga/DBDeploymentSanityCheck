@@ -53,7 +53,7 @@ public class TestcaseBean implements Serializable {
     }
 
     public void setEnabled(String enabled) {
-        this.enabled = (enabled == "Y")? true:false;
+        this.enabled = (enabled.equals("Y"))? true:false;
     }
 
     public ETestcaseStatus getStatus() {
@@ -63,20 +63,6 @@ public class TestcaseBean implements Serializable {
     public void setStatus(ETestcaseStatus status) {
         this.status = status;
     }
-
-//    public String getExpectedResult() {
-//        return expectedResult;
-//    }
-//
-//    public void setExpectedResult(String expectedResult) throws Exception {
-//        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-//        DocumentBuilder builder = null;
-//        builder = factory.newDocumentBuilder();
-//
-//        Document doc = builder.parse(new ByteArrayInputStream(expectedResult.getBytes(StandardCharsets.UTF_8)));
-//        this.expectedResult = doc;
-//    }
-
 
     public String getExpectedResult() {
         return expectedResult;
@@ -100,5 +86,19 @@ public class TestcaseBean implements Serializable {
 
     public void setComparisonResult(String comparisonResult) {
         this.comparisonResult = comparisonResult;
+    }
+
+    @Override
+    public String toString() {
+        return "TestcaseBean{" +
+                "code='" + code + '\'' +
+                ", description='" + description + '\'' +
+                ", query='" + query + '\'' +
+                ", enabled=" + enabled +
+                ", status=" + status +
+                ", expectedResult='" + expectedResult + '\'' +
+                ", actualResult='" + actualResult + '\'' +
+                ", comparisonResult='" + comparisonResult + '\'' +
+                '}';
     }
 }

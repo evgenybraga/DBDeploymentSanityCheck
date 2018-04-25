@@ -17,7 +17,7 @@
     </parameterMap>
 
     <procedure id="getTestcase" parameterMap="getTestcaseMap">
-        { call DBTEST.PKG_CORE.get_testcase(?, ?)}
+        {call DBTEST.PKG_CORE.get_testcase(?, ?)}
     </procedure>
 
 
